@@ -27,6 +27,7 @@ class SeoObjectExtension extends SiteTreeExtension {
 	private static $use_webmaster_tag = true;
 
 	private static $db = array(
+        'MetaTitle' => 'Varchar(255)',
 		'SEOPageSubject' => 'Varchar(256)'
 	);  
 
@@ -121,6 +122,14 @@ class SeoObjectExtension extends SiteTreeExtension {
 
 
 		$fields->addFieldsToTab('Root.SEO', array(
+                            TextField::create("MetaTitle", $this->owner->fieldLabel('MetaTitle'))
+                                ->setRightTitle(
+                                    _t(
+                                        'SiteTree.METATITLEHELP',
+                                        "Shown at the top of the browser window and used as the 'linked text' by search engines."
+                                    )
+                                )
+                                ->addExtraClass('help'),
 							TextareaField::create("MetaDescription", $this->owner->fieldLabel('MetaDescription'))
 								->setRightTitle(
 									_t(
