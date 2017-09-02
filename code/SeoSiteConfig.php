@@ -7,7 +7,9 @@
 class SeoSiteConfig extends DataExtension
 {
     private static $db = array(
-        'GoogleWebmasterMetaTag' => 'Varchar(512)'
+        'GoogleWebmasterMetaTag' => 'Varchar(512)',
+        'MetaTitleSeparator' => 'Varchar(8)',
+        'MetaTitleHomeReversed' => 'Boolean',
     );
 
     /**
@@ -29,6 +31,27 @@ class SeoSiteConfig extends DataExtension
                     "Full Google webmaster meta tag For example &lt;meta name=\"google-site-verification\" content=\"hjhjhJHG12736JHGdfsdf\" /&gt;"
                 ))
             );
+            $fields->addFieldToTab(
+                "Root.SEO",
+                TextField::create(
+                    "MetaTitleSeparator",
+                    _t('SEO.MetaTitleSeparator', 'Meta title separator')
+                )->setRightTitle(_t(
+                    'SEO.MetaTitleSeparatorRightTitle',
+                    "Sets the separator between title and site name in the meta title. Defaults to a pipe if empty."
+                ))
+            );
+            $fields->addFieldToTab(
+                "Root.SEO",
+                CheckboxField::create(
+                    "MetaTitleHomeReversed",
+                    _t('SEO.MetaTitleHomeReversed', 'Reverse meta title for home')
+                )->setRightTitle(_t(
+                    'SEO.MetaTitleHomeReversedRightTitle',
+                    "Sets the homepage to show the site name first followed by page title."
+                ))
+            );
+
         }
     }
 }

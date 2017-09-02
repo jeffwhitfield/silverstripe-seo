@@ -31,62 +31,6 @@
 }
 
 /* hidden literal field for site title */
-#ss_siteconfig_title {
+.hidden_literal_field {
 	display: none;
-}
-
-#Root_SEO div#Options ul.ui-tabs-nav {
-	float: left;
-}
-
-
-/* five-star css */
-div#fivestar-widget {
-	display: block;
-	clear: both;
-}
-div#fivestar-widget div.star {
-	float: left;
-	height: 15px;
-	overflow: hidden;
-	width: 17px;
-	text-indent: -999em;
-	background: url("../images/star.png") no-repeat scroll 0 0 transparent;
-	text-decoration: none;    
-}
-div#fivestar-widget div.on {
-	background-position: 0 -16px;
-}
-
-div#fivestar-widget div.on-half {
-	background-position: 0 -32px;
-}
-
-
-h5.seo_score {
-	margin-bottom: 4px;
-	margin-top: 4px;
-}
-div.score_clear {
-	clear: both;
-	height: 10px;
-}
-
-ul#seo_score_tips {
-	list-style: circle;
-	margin: 14px;
-}
-ul#seo_score_tips li {
-	color: #f00;
-	margin-bottom: 4px;
-}
-
-
-.simple_pagesubject_yes {
-	font-weight: bold;
-	color: green;
-}
-.simple_pagesubject_no {
-	font-weight: bold;
-	color: red;
 }
